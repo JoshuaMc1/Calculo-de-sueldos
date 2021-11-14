@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,28 +11,152 @@
     <link rel="stylesheet" href="src/style/style.css">
     <title>Ejercicio de refozamiento</title>
 </head>
+
 <body>
     <main>
         <div class="container-fluid">
             <div class="container-fluid my-2 mx-2 bg-white p-5 rounded">
-                <form class="px-3">
-                    <div class="mb-3">
-                        <div class="row">
-                            <div class="col-sm-12 col-lg-6 mb-3">
-                                <label class="form-label">Nombre</label>
-                                <input type="text" class="form-control">
+                <div class="container-fluid">
+                    <fieldset>
+                        <legend>Datos Personales</legend>
+                        <form class="py-2 px-3">
+                            <div class="mb-3">
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-12 mb-3">
+                                        <label class="form-label">Numero de identidad</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-sm-12 col-lg-6 mb-3">
+                                        <label class="form-label">Primer nombre</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-sm-12 col-lg-6 mb-3">
+                                        <label class="form-label">Segundo nombre</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-sm-12 col-lg-12 mb-3">
+                                        <label class="form-label">Apellidos</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-sm-12 col-lg-6 mb-3">
+                                        <label class="form-label">Fecha de nacimiento</label>
+                                        <input type="date" class="form-control">
+                                    </div>
+                                    <div class="col-sm-12 col-lg-6 mb-3">
+                                        <label class="form-label">Genero</label>
+                                        <div class="py-2">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="inlineRadio1" value="option1">
+                                                <label class="form-check-label" for="inlineRadio1">Masculino</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="inlineRadio2" value="option2">
+                                                <label class="form-check-label" for="inlineRadio2">Femenino</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-lg-12 mb-3">
+                                        <label class="form-label">Correo electrónico</label>
+                                        <input type="email" class="form-control">
+                                    </div>
+                                    <div class="col-sm-12 col-lg-6 mb-3">
+                                        <label class="form-label">Sueldo base</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-sm-12 col-lg-6 mb-3">
+                                        <label class="form-label">Puestos</label>
+                                        <select id="disabledSelect" class="form-select">
+                                            <option>Seleccione una opción</option>
+                                            <option>Administrativo</option>
+                                            <option>Conductor</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-sm-12 col-lg-6 mb-3">
-                                <label class="form-label">Apellido</label>
-                                <input type="text" class="form-control">
+                        </form>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Datos calculados</legend>
+                        <form class="py-2 px-3">
+                            <div class="mb-3">
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-12 mb-3">
+                                        <label class="form-label">Nombre completo</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-sm-12 col-lg-4 mb-3">
+                                        <label class="form-label">Deducciones por ahorro</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-sm-12 col-lg-4 mb-3">
+                                        <label class="form-label">Bonificación</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-sm-12 col-lg-4 mb-3">
+                                        <label class="form-label">Bono navideño</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-sm-12 col-lg-6 mb-3">
+                                        <label class="form-label">Seguro privado</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-sm-12 col-lg-6 mb-3">
+                                        <label class="form-label">Seguro social</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-sm-12 col-lg-12 mb-2">
+                                        <label class="form-label">Sueldo neto</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-sm-12 col-lg-12 mb-3">
-                                <label class="form-label">Numero de identidad</label>
-                                <input type="text" class="form-control">
-                            </div>
+                        </form>
+                    </fieldset>
+                    <div class="row text-center">
+                        <div class="col-sm-12 col-lg-4 mb-3">
+                            <button class="btn-lg btn-danger">Limpiar Pantalla</button>
+                        </div>
+                        <div class="col-sm-12 col-lg-4 mb-3">
+                            <button class="btn-lg btn-success">Almacenar</button>
+                        </div>
+                        <div class="col-sm-12 col-lg-4 mb-3">
+                            <button class="btn-lg btn-primary">Imprimir</button>
                         </div>
                     </div>
-                </form>
+                </div>
+                <div class="container-fluid mt-5">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
             </div>
         </div>
     </main>
@@ -42,4 +167,5 @@
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
         crossorigin="anonymous"></script>
 </body>
+
 </html>
