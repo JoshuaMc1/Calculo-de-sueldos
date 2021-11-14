@@ -11,10 +11,8 @@ $(document).ready(function () {
 $("#btnLimpiar").click(function () { 
     dPersonales.txtIdentidad.value = "";
     dPersonales.txtNombre1.value ="";
-    dPersonales.txtNompre2.value = "";
+    dPersonales.txtNombre2.value = "";
     dPersonales.txtApellidos.value = "";
-    //dPersonales.txtFecha;
-    //dPersonales.inlineRadioOptions;
     dPersonales.txtCorreo.value = "";
     dPersonales.txtSueldoBase.value = "";
     //-----------------------------------------
