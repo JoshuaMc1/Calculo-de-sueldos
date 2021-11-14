@@ -24,50 +24,50 @@
                                 <div class="row">
                                     <div class="col-sm-12 col-lg-12 mb-3">
                                         <label class="form-label">Numero de identidad</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="txtIdentidad">
                                     </div>
                                     <div class="col-sm-12 col-lg-6 mb-3">
                                         <label class="form-label">Primer nombre</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="txtNombre1">
                                     </div>
                                     <div class="col-sm-12 col-lg-6 mb-3">
                                         <label class="form-label">Segundo nombre</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="txtNombre2">
                                     </div>
                                     <div class="col-sm-12 col-lg-12 mb-3">
                                         <label class="form-label">Apellidos</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="txtApellidos">
                                     </div>
                                     <div class="col-sm-12 col-lg-6 mb-3">
                                         <label class="form-label">Fecha de nacimiento</label>
-                                        <input type="date" class="form-control">
+                                        <input type="date" class="form-control" name="txtFecha">
                                     </div>
                                     <div class="col-sm-12 col-lg-6 mb-3">
                                         <label class="form-label">Genero</label>
                                         <div class="py-2">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                                    id="inlineRadio1" value="option1">
+                                                    id="rMasculino">
                                                 <label class="form-check-label" for="inlineRadio1">Masculino</label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                                    id="inlineRadio2" value="option2">
+                                                    id="rFemenino">
                                                 <label class="form-check-label" for="inlineRadio2">Femenino</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-lg-12 mb-3">
                                         <label class="form-label">Correo electrónico</label>
-                                        <input type="email" class="form-control">
+                                        <input type="email" class="form-control" name="txtCorreo">
                                     </div>
                                     <div class="col-sm-12 col-lg-6 mb-3">
                                         <label class="form-label">Sueldo base</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="txtSueldoBase">
                                     </div>
                                     <div class="col-sm-12 col-lg-6 mb-3">
                                         <label class="form-label">Puestos</label>
-                                        <select id="disabledSelect" class="form-select">
+                                        <select id="cSeleccionar" class="form-select">
                                             <option>Seleccione una opción</option>
                                             <option>Administrativo</option>
                                             <option>Conductor</option>
@@ -79,36 +79,36 @@
                     </fieldset>
                     <fieldset>
                         <legend>Datos calculados</legend>
-                        <form class="py-2 px-3">
+                        <form class="py-2 px-3" name="dCalculados">
                             <div class="mb-3">
                                 <div class="row">
                                     <div class="col-sm-12 col-lg-12 mb-3">
                                         <label class="form-label">Nombre completo</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="txtNombreComp">
                                     </div>
                                     <div class="col-sm-12 col-lg-4 mb-3">
                                         <label class="form-label">Deducciones por ahorro</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="txtDAhorros">
                                     </div>
                                     <div class="col-sm-12 col-lg-4 mb-3">
                                         <label class="form-label">Bonificación</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="txtBonificacion">
                                     </div>
                                     <div class="col-sm-12 col-lg-4 mb-3">
                                         <label class="form-label">Bono navideño</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="txtBonoN">
                                     </div>
                                     <div class="col-sm-12 col-lg-6 mb-3">
                                         <label class="form-label">Seguro privado</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="txtSeguroPriv">
                                     </div>
                                     <div class="col-sm-12 col-lg-6 mb-3">
                                         <label class="form-label">Seguro social</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="txtSeguroSoc">
                                     </div>
                                     <div class="col-sm-12 col-lg-12 mb-2">
                                         <label class="form-label">Sueldo neto</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="txtSueldoNeto">
                                     </div>
                                 </div>
                             </div>
@@ -116,50 +116,25 @@
                     </fieldset>
                     <div class="row text-center">
                         <div class="col-sm-12 col-lg-4 mb-3">
-                            <button class="btn-lg btn-danger">Limpiar Pantalla</button>
+                            <button class="btn-lg btn-danger" name="btnLimpiar">Limpiar Pantalla</button>
                         </div>
                         <div class="col-sm-12 col-lg-4 mb-3">
-                            <button class="btn-lg btn-success">Almacenar</button>
+                            <button class="btn-lg btn-success" name="btnAlmacenar">Almacenar</button>
                         </div>
                         <div class="col-sm-12 col-lg-4 mb-3">
-                            <button class="btn-lg btn-primary">Imprimir</button>
+                            <button class="btn-lg btn-primary" name="btnImprimir">Imprimir</button>
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid mt-5">
-                    <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                <div class="container-fluid mt-5" id="tabla">
+                    
                 </div>
             </div>
         </div>
     </main>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="src/js/funciones.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
         crossorigin="anonymous"></script>
