@@ -1,15 +1,14 @@
 //Desabilitar cajas de texto cuando el documento este listo
 $(document).ready(function () {
-    dCalculados.txtNombreComp.disabled = true;
-    dCalculados.txtDAhorros.disabled = true;
-    dCalculados.txtBonificacion.disabled = true;
-    dCalculados.txtBonoN.disabled = true;
-    dCalculados.txtSeguroPriv.disabled = true;
-    dCalculados.txtSeguroSoc.disabled = true;
-    dCalculados.txtSueldoNeto.disabled = true;
+    $("#txtNombreComp").prop("disabled",true);
+    $("#txtDAhorros").prop("disabled",true);
+    $("#txtBonificacion").prop("disabled",true);
+    $("#txtBonoN").prop("disabled",true);
+    $("#txtSeguroPriv").prop("disabled",true);
+    $("#txtSeguroSoc").prop("disabled",true);
+    $("#txtSueldoNeto").prop("disabled",true);
 });
-
-//Cunado se le de click en el boton limpiar
+//Cuando se le de click en el boton limpiar
 $("#btnLimpiar").click(function () {
     dPersonales.txtIdentidad.value = "";
     dPersonales.txtNombre1.value = "";
@@ -18,21 +17,21 @@ $("#btnLimpiar").click(function () {
     dPersonales.txtCorreo.value = "";
     dPersonales.txtSueldoBase.value = "";
     dPersonales.txtFecha.value = "";
-    dPersonales.cSeleccionar.selectedIndex = 0;
+    dPersonales.options.selectedIndex = 0;
     //-----------------------------------------
-    dCalculados.txtNombreComp.value = "";
-    dCalculados.txtDAhorros.value = "";
-    dCalculados.txtBonificacion.value = "";
-    dCalculados.txtBonoN.value = "";
-    dCalculados.txtSeguroPriv.value = "";
-    dCalculados.txtSeguroSoc.value = "";
-    dCalculados.txtSueldoNeto.value = "";
+    $("#txtNombreComp").val("");
+    $("#txtDAhorros").val("");
+    $("#txtBonificacion").val("");
+    $("#txtBonoN").val("");
+    $("#txtSeguroPriv").val("");
+    $("#txtSeguroSoc").val("");
+    $("#txtSueldoNeto").val("");
 });
-
+//Boton imprimir, muestra un modal
 $("#btnImprimir").click(function () {
     print();
 });
-
+//Funcion para validar la entrada del numero de identidad
 function validarIdentidad(e) {
     var esc = e.keyCode || e.wich;
     var entrada = String.fromCharCode(esc);
@@ -49,7 +48,7 @@ function validarIdentidad(e) {
         return false;
     }
 }
-
+//Funcion para validar la entrada de numer decimal
 function validarDecimal(e, elemento) {
     var entrada = (e.which) ? e.which : event.keyCode
     try {
@@ -73,7 +72,7 @@ function validarDecimal(e, elemento) {
     }
     return true;
 }
-
+//Cuando se le da click en el boton calcular
 $("#btnCalcular").click(function () {
     let boleano = [true,true,true,true,true,true,true,true,true];
     boleano[0] = validarVacio($("#txtIdentidad"));
@@ -83,12 +82,12 @@ $("#btnCalcular").click(function () {
     boleano[4] = validarVacio($("#txtFecha"));
     boleano[5] = validarVacio($("#txtCorreo"));
     boleano[6] = validarVacio($("#txtSueldoBase"));
-    if ($('#opciones').val().trim() === '') {
+    if ($("#opciones").val().trim() === '') {
         boleano[7] = true;
-        error($('#opciones'));
+        error($("#opciones"));
     } else {
         boleano[7] = false;
-        noError($('#opciones'));
+        noError($("#opciones"));
     }
     if ($('input[name="inlineRadioOptions"]').is(':checked')) {
         boleano[8] = false;
@@ -99,18 +98,36 @@ $("#btnCalcular").click(function () {
     }
 
     if(retornarValidacion(boleano)){
-        alert("Ejercutando funcion calcular");
-    }else {
-        alert("No ejecutando funcion calcular");
+        calculos();
     }
 });
-
+//Calculos
+function calculos(){
+    var nombreCompleto = $("#txtNombre1").val()+" "+$("#txtNombre2").val()+" "+$("#txtApellidos").val();
+    var deducciones = parseFloat($("#txtSueldoBase").val()) * 0.10;
+    var bono = parseFloat($("#txtSueldoBase").val()) * 0.15;
+    var bonoNav = 0;
+    var seleccion = $("#opciones option:selected").text();
+    if(seleccion == "Administrativo") bonoNav = 250.00;
+    else if(seleccion == "Conductor") bonoNav = 300.00;
+    var seguroP = ((parseFloat($("#txtSueldoBase").val())) - deducciones) * 0.035;
+    var seguroS = (parseFloat($("#txtSueldoBase").val())) * 0.04;
+    var total = (parseFloat($("#txtSueldoBase").val())) - deducciones - seguroP - seguroS + bono + bonoNav;
+    $("#txtNombreComp").val(nombreCompleto);
+    $("#txtDAhorros").val(deducciones.toFixed(2));
+    $("#txtBonificacion").val(bono.toFixed(2));
+    $("#txtBonoN").val(bonoNav.toFixed(2));
+    $("#txtSeguroPriv").val(seguroP.toFixed(2));
+    $("#txtSeguroSoc").val(seguroS.toFixed(2));
+    $("#txtSueldoNeto").val(total.toFixed(2));
+}
+//Retorna si todos los campos estan llenos o no
 function retornarValidacion(b){
     if(b[0]==false && b[1]==false && b[2]==false && b[3]==false && b[4]==false && b[5]==false && b[6]==false && b[7]==false && b[8]==false){
         return true;
     }else return false;
 }
-
+//Valida si los campos estan vacios o no y llama a funciones para cambiar el borde
 function validarVacio(p){
     if(p.val().length < 1){
         error(p);
@@ -120,11 +137,11 @@ function validarVacio(p){
         return false;
     }
 }
-
+//Cambia el borde de los inputs a color rojo si estan vacios
 function error(p){
     p.addClass("invalido");
 }
-
+//Cambia al color por defecto los inputs si dichos ya cuentan con texto
 function noError(p){
     p.removeClass("invalido");
 }
