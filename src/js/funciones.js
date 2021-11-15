@@ -69,7 +69,7 @@ function validarDecimal(e, elemento) {
             }
         }
     } catch (error) {
-        alert("Se a producido un error al ingresar los datos");
+        alert(`Se a producido un error al ingresar los datos ${error}`);
     }
     return true;
 }
