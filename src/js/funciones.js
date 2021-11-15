@@ -49,7 +49,7 @@ function validarIdentidad(e) {
         return false;
     }
 }
-
+//hola
 function NumCheck(e, field) {
     key = e.keyCode ? e.keyCode : e.which;
     // backspace
