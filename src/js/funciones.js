@@ -73,3 +73,58 @@ function validarDecimal(e, elemento) {
     }
     return true;
 }
+
+$("#btnCalcular").click(function () {
+    let boleano = [true,true,true,true,true,true,true,true,true];
+    boleano[0] = validarVacio($("#txtIdentidad"));
+    boleano[1] = validarVacio($("#txtNombre1"));
+    boleano[2] = validarVacio($("#txtNombre2"));
+    boleano[3] = validarVacio($("#txtApellidos"));
+    boleano[4] = validarVacio($("#txtFecha"));
+    boleano[5] = validarVacio($("#txtCorreo"));
+    boleano[6] = validarVacio($("#txtSueldoBase"));
+    if ($('#opciones').val().trim() === '') {
+        boleano[7] = true;
+        error($('#opciones'));
+    } else {
+        boleano[7] = false;
+        noError($('#opciones'));
+    }
+    if ($('input[name="inlineRadioOptions"]').is(':checked')) {
+        boleano[8] = false;
+        $(".valGen").addClass("d-none");
+    }else {
+        boleano[8] = true;
+        $(".valGen").removeClass("d-none"); 
+    }
+
+    if(retornarValidacion(boleano)){
+        alert("Ejercutando funcion calcular");
+    }else {
+        alert("No ejecutando funcion calcular");
+    }
+});
+
+function retornarValidacion(b){
+    if(b[0]==false && b[1]==false && b[2]==false && b[3]==false && b[4]==false && b[5]==false && b[6]==false && b[7]==false && b[8]==false){
+        return true;
+    }else return false;
+}
+
+function validarVacio(p){
+    if(p.val().length < 1){
+        error(p);
+        return true;
+    }else{
+        noError(p);
+        return false;
+    }
+}
+
+function error(p){
+    p.addClass("invalido");
+}
+
+function noError(p){
+    p.removeClass("invalido");
+}

@@ -4,3 +4,12 @@ body{
     background: #E4D2CE;
     background: linear-gradient(to left,#19A693, #002CD0);
 }
+
+.invalido{
+    border: red 0.5px solid;
+}
+
+.valGen{
+    color: red;
+    font-size: 9pt;
+}
