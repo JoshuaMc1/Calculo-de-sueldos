@@ -49,23 +49,27 @@ function validarIdentidad(e) {
         return false;
     }
 }
-//hola
-function NumCheck(e, field) {
-    key = e.keyCode ? e.keyCode : e.which;
-    // backspace
-    if (key == 8) return true;
-    // 0-9
-    if (key > 47 && key < 58) {
-        if (field.value == "") return true;
-        regexp = /.[0-9]{2}$/;
-        return !(regexp.test(field.value));
+
+function validarDecimal(e, elemento) {
+    var entrada = (e.which) ? e.which : event.keyCode
+    try {
+        if (entrada > 31 && (entrada < 48 || entrada > 57) && !(entrada == 46 || entrada == 8))
+            return false;
+        else {
+            var tam = $(elemento).val().length;
+            var index = $(elemento).val().indexOf('.');
+            if (index > 0 && entrada == 46) {
+                return false;
+            }
+            if (index > 0) {
+                var cadena = (tam + 1) - index;
+                if (cadena > 3) {
+                    return false;
+                }
+            }
+        }
+    } catch (error) {
+        alert("Se a producido un error al ingresar los datos");
     }
-    // .
-    if (key == 46) {
-        if (field.value == "") return false;
-        regexp = /[0-9]+$/;
-        return regexp.test(field.value);
-    }
-    // other key
-    return false;
+    return true;
 }
