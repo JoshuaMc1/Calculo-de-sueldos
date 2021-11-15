@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     dCalculados.txtNombreComp.disabled = true;
     dCalculados.txtDAhorros.disabled = true;
