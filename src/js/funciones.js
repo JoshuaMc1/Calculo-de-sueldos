@@ -15,6 +15,8 @@ $("#btnLimpiar").click(function () {
     dPersonales.txtApellidos.value = "";
     dPersonales.txtCorreo.value = "";
     dPersonales.txtSueldoBase.value = "";
+    dPersonales.txtFecha.value = "";
+    dPersonales.cSeleccionar.selectedIndex = 0;
     //-----------------------------------------
     dCalculados.txtNombreComp.value = "";
     dCalculados.txtDAhorros.value = "";
