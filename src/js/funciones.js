@@ -1,3 +1,4 @@
+//Desabilitar cajas de texto cuando el documento este listo
 $(document).ready(function () {
     dCalculados.txtNombreComp.disabled = true;
     dCalculados.txtDAhorros.disabled = true;
@@ -8,6 +9,7 @@ $(document).ready(function () {
     dCalculados.txtSueldoNeto.disabled = true;
 });
 
+//Cunado se le de click en el boton limpiar
 $("#btnLimpiar").click(function () {
     dPersonales.txtIdentidad.value = "";
     dPersonales.txtNombre1.value = "";
