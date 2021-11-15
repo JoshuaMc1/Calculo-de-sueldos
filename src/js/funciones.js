@@ -61,7 +61,7 @@ function NumCheck(e, field) {
     // .
     if (key == 46) {
         if (field.value == "") return false
-        regexp = /^[0-9]+$/
+        regexp = /[0-9]+$/
         return regexp.test(field.value)
     }
     // other key
