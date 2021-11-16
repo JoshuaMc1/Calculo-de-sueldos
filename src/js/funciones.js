@@ -145,3 +145,22 @@ function error(p){
 function noError(p){
     p.removeClass("invalido");
 }
+//Al dar click en almacenar, los datos se envian a la tabla
+$("#btnAlmacenar").click(function () { 
+    var arreglo = new Array();
+    llenarArreglo(arreglo);
+    $('#cuerpo').append('<tr><td>'+arreglo[0]+'</td><td>'+arreglo[1]+'</td><td>'+arreglo[2]+'</td><td>'+arreglo[3]+'</td>'+'<td>'+
+    arreglo[4]+'</td>'+'<td>'+arreglo[5]+'</td>'+'<td>'+arreglo[6]+'</td>'+'<td>'+arreglo[7]+'</td>');
+
+});
+//Funcion para extraer los datos de los campos en un arreglo
+function llenarArreglo(arreglo){
+    arreglo.push($("#txtIdentidad").val());
+    arreglo.push($("#txtNombreComp").val());
+    arreglo.push($("#txtSueldoBase").val());
+    arreglo.push($("#txtDAhorros").val());
+    arreglo.push($("#txtBonificacion").val());
+    arreglo.push($("#txtSeguroSoc").val());
+    arreglo.push($("#txtSeguroPriv").val());
+    arreglo.push($("#txtSueldoNeto").val());
+}
