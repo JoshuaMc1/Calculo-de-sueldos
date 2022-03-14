@@ -24,7 +24,8 @@
                                 <div class="row">
                                     <div class="col-sm-12 col-lg-12 mb-3">
                                         <label class="form-label">Numero de identidad</label>
-                                        <input type="text" class="form-control" id="txtIdentidad" name="txtIdentidad" onkeypress="return validarIdentidad(event)">
+                                        <input type="text" class="form-control" id="txtIdentidad" name="txtIdentidad"
+                                            onkeypress="validarIdentidad(event)">
                                     </div>
                                     <div class="col-sm-12 col-lg-6 mb-3">
                                         <label class="form-label">Primer nombre</label>
@@ -66,7 +67,8 @@
                                     </div>
                                     <div class="col-sm-12 col-lg-6 mb-3">
                                         <label class="form-label">Sueldo base</label>
-                                        <input type="text" class="form-control" id="txtSueldoBase" name="txtSueldoBase" onkeypress="return validarDecimal(event,this)">
+                                        <input type="text" class="form-control" id="txtSueldoBase" name="txtSueldoBase"
+                                            onkeypress="validarDecimal(event,this)">
                                     </div>
                                     <div class="col-sm-12 col-lg-6 mb-3">
                                         <label class="form-label">Puestos</label>
@@ -98,7 +100,8 @@
                                     </div>
                                     <div class="col-sm-12 col-lg-4 mb-3">
                                         <label class="form-label">Bonificación</label>
-                                        <input type="text" class="form-control" name="txtBonificacion" id="txtBonificacion">
+                                        <input type="text" class="form-control" name="txtBonificacion"
+                                            id="txtBonificacion">
                                     </div>
                                     <div class="col-sm-12 col-lg-4 mb-3">
                                         <label class="form-label">Bono navideño</label>
@@ -122,7 +125,8 @@
                     </fieldset>
                     <div class="row text-center">
                         <div class="col-sm-12 col-lg-4 mb-3">
-                            <button class="btn-lg btn-danger" name="btnLimpiar" id="btnLimpiar">Limpiar Pantalla</button>
+                            <button class="btn-lg btn-danger" name="btnLimpiar" id="btnLimpiar">Limpiar
+                                Pantalla</button>
                         </div>
                         <div class="col-sm-12 col-lg-4 mb-3">
                             <button class="btn-lg btn-success" name="btnAlmacenar" id="btnAlmacenar">Almacenar</button>
@@ -135,16 +139,16 @@
                 <div class="container-fluid mt-5" id="tabla">
                     <table class="table table-striped">
                         <thead>
-                          <tr>
-                            <th scope="col">Identidad</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Sueldo base</th>
-                            <th scope="col">Deducciones</th>
-                            <th scope="col">Bonificacion</th>
-                            <th scope="col">Seguro social</th>
-                            <th scope="col">Seguro privado</th>
-                            <th scope="col">Sueldo neto</th>
-                          </tr>
+                            <tr>
+                                <th scope="col">Identidad</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Sueldo base</th>
+                                <th scope="col">Deducciones</th>
+                                <th scope="col">Bonificacion</th>
+                                <th scope="col">Seguro social</th>
+                                <th scope="col">Seguro privado</th>
+                                <th scope="col">Sueldo neto</th>
+                            </tr>
                         </thead>
                         <tbody id="cuerpo">
 
